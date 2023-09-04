@@ -54,7 +54,7 @@ const LearningGrid = () => {
         return (
           <div
             data-aos='flip-up'
-            data-aos-duration='400'
+            data-aos-duration='500'
             data-aos-offset='100'
             key={i}
             className={`${i === 0 && "xl:col-span-2 xl:h-[294px]"}  ${
@@ -68,7 +68,7 @@ const LearningGrid = () => {
             {card.order < 0 ? (
               <div
                 data-aos='flip-left'
-                data-aos-duration='400'
+                data-aos-duration='500'
                 data-aos-offset='100'
                 className='xl:w-[90%] flex flex-col gap-3 pb-10 xl:pb-0'
               >
@@ -90,7 +90,7 @@ const LearningGrid = () => {
               <div
                 className='p-8 flex flex-col gap-8'
                 data-aos='flip-right'
-                data-aos-duration='400'
+                data-aos-duration='500'
                 data-aos-offset='100'
               >
                 <h1 className='text-richblack-5 text-lg'>{card.heading}</h1>
