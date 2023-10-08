@@ -52,7 +52,7 @@ const CodeBlocks = ({
         className='h-fit code-border flex flex-row py-3 text-[10px] sm:text-sm leading-[18px] sm:leading-6 relative w-[100%] lg:w-[470px]'
         data-aos='flip-up'
         data-aos-offset='110'
-        data-aos-duration='300'
+        data-aos-duration='500'
       >
         {backgroundGradient}
         {/* Indexing */}
