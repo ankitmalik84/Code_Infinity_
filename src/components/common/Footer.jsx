@@ -70,7 +70,7 @@ export const Footer = () => {
               <h4>follow us</h4>
               <div className='social-links' data-aos='flip-up'>
                 <a
-                  href='https://www.linkedin.com/in/coder-ankit-malik/'
+                  href='https://www.linkedin.com/in/ankitmalik00/'
                   target='blank'
                 >
                   <FaLinkedin className=' mx-auto mt-3 scale-125' />
