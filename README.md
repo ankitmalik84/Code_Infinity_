@@ -124,6 +124,6 @@ For detailed API documentation and endpoints, refer to the [API Documentation](h
 
 1. Start the server: `npm start`
 2. Open a new terminal and navigate to the `client` directory: `cd client`
-3. Start the React development server: `npm start`
+3. Start the React development server: `npm run start`
 
 Access the application in your browser at `http://localhost:3000`.
