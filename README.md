@@ -11,7 +11,7 @@ Code Infinity is a fully functional EdTech platform that enables users to create
 - [Introduction](#introduction)
 - [System Architecture](#system-architecture)
   - [Front-end](#front-end)
-  - [Back-end](#back-end)
+  - [Back-end](https://github.com/ankitmalik84/Code_Infinity_Backend)
   - [Database](#database)
   - [Architecture Diagram](#architecture-diagram)
 - [API Design](#api-design)
