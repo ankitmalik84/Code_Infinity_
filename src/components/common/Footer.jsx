@@ -96,7 +96,7 @@ export const Footer = () => {
           className='p-8 flex flex-col sm:flex-row justify-center items-center gap-4 '
           data-aos='zoom-out'
         >
-          <p className='text-white text-2xl my-2  '>© 2023</p>
+          <p className='text-white text-2xl my-2  '>© 2024</p>
           <div className=' '>
             <img src={Logo} alt='' />
           </div>
