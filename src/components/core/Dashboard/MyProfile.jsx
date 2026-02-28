@@ -1,12 +1,10 @@
 import { RiEditBoxLine } from "react-icons/ri"
 import { useSelector } from "react-redux"
-import { useNavigate } from "react-router-dom"
 import { Link } from "react-router-dom"
 import { formattedDate } from "../../../utils/dateFormatter"
 
 export default function MyProfile() {
   const { user } = useSelector((state) => state.profile)
-  const navigate = useNavigate()
 
   return (
     <>

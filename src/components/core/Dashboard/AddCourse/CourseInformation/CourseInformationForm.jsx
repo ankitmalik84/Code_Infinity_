@@ -2,14 +2,12 @@ import React, { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { MdNavigateNext } from "react-icons/md"
-import IconBtn from "../../../../common/IconBtn"
 import {
   addCourseDetails,
   editCourseDetails,
   fetchCourseCategories,
 } from "../../../../../services/operations/courseDetailsAPI";
 import { HiOutlineCurrencyRupee } from "react-icons/hi";
-import { BiUpload } from "react-icons/bi";
 import RequirementField from "./RequirementField";
 import { setStep, setCourse } from "../../../../../slices/courseSlice";
 import { COURSE_STATUS } from "../../../../../utils/constants";
@@ -55,6 +53,7 @@ const CourseInformationForm = () => {
     }
 
     getCategories();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- init on mount only
   }, []);
 
   const isFormUpdated = () => {
@@ -79,59 +78,57 @@ const CourseInformationForm = () => {
     if (editCourse) {
       if (isFormUpdated()) {
         const currentValues = getValues();
-        const formData = new FormData();
+        const editFormData = new FormData();
 
-        formData.append("courseId", course._id);
+        editFormData.append("courseId", course._id);
         if (currentValues.courseTitle !== course.courseName) {
-          formData.append("courseName", data.courseTitle);
+          editFormData.append("courseName", data.courseTitle);
         }
 
         if (currentValues.courseShortDesc !== course.courseDescription) {
-          formData.append("courseDescription", data.courseShortDesc);
+          editFormData.append("courseDescription", data.courseShortDesc);
         }
 
         if (currentValues.coursePrice !== course.price) {
-          formData.append("price", data.coursePrice);
+          editFormData.append("price", data.coursePrice);
         }
 
         if (currentValues.courseTags.toString() !== course.tag.toString()) {
-          formData.append("tag", JSON.stringify(data.courseTags));
+          editFormData.append("tag", JSON.stringify(data.courseTags));
         }
 
         if (currentValues.courseBenefits !== course.whatYouWillLearn) {
-          formData.append("whatYouWillLearn", data.courseBenefits);
+          editFormData.append("whatYouWillLearn", data.courseBenefits);
         }
 
         if (currentValues.courseCategory._id !== course.category._id) {
-          formData.append("category", data.courseCategory);
+          editFormData.append("category", data.courseCategory);
         }
 
         if (
           currentValues.courseRequirements.toString() !==
           course.instructions.toString()
         ) {
-          formData.append(
+          editFormData.append(
             "instructions",
             JSON.stringify(data.courseRequirements)
           );
         }
 
         if (currentValues.courseImage !== course.thumbnail) {
-          formData.append("thumbnailImage", data.courseImage);
+          editFormData.append("thumbnailImage", data.courseImage);
         }
 
         setLoading(true);
-        const result = await editCourseDetails(formData, token);
+        const editResult = await editCourseDetails(editFormData, token);
         setLoading(false);
-        if (result) {
+        if (editResult) {
           setStep(2);
-          dispatch(setCourse(result));
+          dispatch(setCourse(editResult));
         }
       } else {
         toast.error("NO Changes made so far");
       }
-      console.log("PRINTING FORMDATA", formData);
-      console.log("PRINTING result", result);
 
       return;
     }

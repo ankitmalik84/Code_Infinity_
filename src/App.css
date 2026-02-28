@@ -244,3 +244,12 @@ details > summary::-webkit-details-marker {
 .section_heading {
   @apply text-2xl font-bold text-richblack-5 lg:text-4xl;
 }
+
+/* Center big play button in edit-lecture / add-lecture video popup (Upload modal) */
+.upload-video-preview-wrapper .video-react-big-play-button,
+.upload-video-preview-wrapper .video-react-big-play-button-left {
+  top: 50% !important;
+  left: 50% !important;
+  margin-top: -0.75em !important;
+  margin-left: -1.5em !important;
+}

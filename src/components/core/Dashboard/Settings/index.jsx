@@ -1,7 +1,6 @@
 import ChangeProfilePicture from "./ChangeProfilePicture"
 import EditProfile from "./EditProfile"
 import DeleteAccount from "./DeleteAccount"
-import UpdatePassword from "./UpdatePassword"
 
 export default function Settings() {
     return (

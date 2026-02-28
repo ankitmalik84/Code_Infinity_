@@ -1,10 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { useDropzone } from "react-dropzone";
 import { FiUploadCloud } from "react-icons/fi";
-import { useSelector } from "react-redux";
-
 import "video-react/dist/video-react.css";
-import { Player } from "video-react";
+import { BigPlayButton, Player } from "video-react";
 
 export default function Upload({
   name,
@@ -16,7 +14,6 @@ export default function Upload({
   viewData = null,
   editData = null,
 }) {
-  const { course } = useSelector((state) => state.course);
   const [selectedFile, setSelectedFile] = useState(null);
   const [previewSource, setPreviewSource] = useState(
     viewData ? viewData : editData ? editData : ""
@@ -48,11 +45,11 @@ export default function Upload({
 
   useEffect(() => {
     register(name, { required: true });
-  }, [register]);
+  }, [name, register]);
 
   useEffect(() => {
     setValue(name, selectedFile);
-  }, [selectedFile, setValue]);
+  }, [name, selectedFile, setValue]);
 
   const handleBrowseClick = () => {
     inputRef.current.click();
@@ -82,7 +79,11 @@ export default function Upload({
                 className="h-full w-full rounded-md object-cover"
               />
             ) : (
-              <Player aspectRatio="16:9" playsInline src={previewSource} />
+              <div className="upload-video-preview-wrapper">
+                <Player aspectRatio="16:9" playsInline src={previewSource}>
+                  <BigPlayButton position="center" />
+                </Player>
+              </div>
             )}
             {!viewData && (
               <button

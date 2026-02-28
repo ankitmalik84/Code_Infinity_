@@ -7,7 +7,6 @@ import "./Footer.css";
 import {
   FaLinkedin,
   FaTwitter,
-  FaGoogle,
   FaInstagram,
   FaGithub,
 } from "react-icons/fa";
@@ -29,13 +28,13 @@ export const Footer = () => {
               <h4>About</h4>
               <ul>
                 <li>
-                  <a href='#'>about us</a>
+                  <a href='/about'>about us</a>
                 </li>
                 <li>
-                  <a href='#'>our services</a>
+                  <a href='/contact'>our services</a>
                 </li>
                 <li>
-                  <a href='#'>privacy policy</a>
+                  <a href='/'>privacy policy</a>
                 </li>
               </ul>
             </div>
@@ -43,13 +42,13 @@ export const Footer = () => {
               <h4>Get Help</h4>
               <ul>
                 <li>
-                  <a href='#'>FAQ</a>
+                  <a href='/contact'>FAQ</a>
                 </li>
                 <li>
-                  <a href='#'>Payments</a>
+                  <a href='/catalog/all'>Payments</a>
                 </li>
                 <li>
-                  <a href='#'>Courses</a>
+                  <a href='/catalog/all'>Courses</a>
                 </li>
               </ul>
             </div>

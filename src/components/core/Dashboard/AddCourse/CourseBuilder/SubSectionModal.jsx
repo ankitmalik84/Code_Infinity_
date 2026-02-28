@@ -9,7 +9,6 @@ import {
   updateSubSection,
 } from "../../../../../services/operations/courseDetailsAPI"
 import { setCourse } from "../../../../../slices/courseSlice"
-import IconBtn from "../../../../common/IconBtn"
 import Upload from "../Upload"
 
 export default function SubSectionModal({
@@ -38,12 +37,11 @@ export default function SubSectionModal({
 
   useEffect(() => {
     if (view || edit) {
-      // console.log("modalData", modalData)
       setValue("lectureTitle", modalData.title)
       setValue("lectureDesc", modalData.description)
       setValue("lectureVideo", modalData.videoUrl)
     }
-  }, [])
+  }, [view, edit, modalData.title, modalData.description, modalData.videoUrl, setValue])
 
   // detect whether form is updated or not
   const isFormUpdated = () => {

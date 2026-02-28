@@ -8,7 +8,6 @@ import { BigPlayButton, Player } from "video-react";
 
 import { markLectureAsComplete } from "../../../services/operations/courseDetailsAPI";
 import { updateCompletedLectures } from "../../../slices/viewCourseSlice";
-import IconBtn from "../../common/IconBtn";
 
 const VideoDetails = () => {
   const { courseId, sectionId, subSectionId } = useParams();
@@ -45,6 +44,7 @@ const VideoDetails = () => {
         setVideoEnded(false);
       }
     })();
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- pathname drives update
   }, [courseSectionData, courseEntireData, location.pathname]);
 
   // check if the lecture is the first video of the course
