@@ -1,4 +1,4 @@
-# Code Infinity - EdTech Platform
+# Code Infinity - EdTech Platform 
 
 # :rocket: [Live Preview](https://code-infinity.vercel.app/)
 
